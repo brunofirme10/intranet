@@ -13,7 +13,7 @@ class TbPessoa extends Migration
      */
     public function up()
     {
-        Schema::create('tb_pessoa', function (Blueprint $table) {
+        Schema::create('pessoas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ds_nome',200);
             $table->string('ds_nome_social',200);
@@ -31,6 +31,6 @@ class TbPessoa extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_pessoa');
+        Schema::dropIfExists('pessoas');
     }
 }

@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Rotas de pessoa
+Route::group(['prefix'=>'pessoa'], function(){
+    Route::get('/', 'Pessoa\PessoaController@index')->name('pessoa')->middleware('auth');
+});
