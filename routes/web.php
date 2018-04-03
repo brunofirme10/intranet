@@ -22,4 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Rotas de pessoa
 Route::group(['prefix'=>'pessoa'], function(){
     Route::get('/', 'Pessoa\PessoaController@index')->name('pessoa')->middleware('auth');
+    Route::get('/cadastro', 'Pessoa\PessoaController@cadastrarForm')->name('cadastro')->middleware('auth');
+    Route::post('/salvar', 'Pessoa\PessoaController@salvar')->name('salvar')->middleware('auth');
+    Route::get('/visualizar/{id}', 'Pessoa\PessoaController@visualizar')->name('visualizar')->middleware('auth');
+    Route::put('/editar/{id}', 'Pessoa\PessoaController@salvar')->name('editar')->middleware('auth');
 });
